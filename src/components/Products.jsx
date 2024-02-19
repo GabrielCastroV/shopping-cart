@@ -5,8 +5,7 @@ import { useCart } from '../hooks/useCart.jsx'
 
 const Products = ({ products }) => {
 
-  const { addToCart, cart } = useCart();
-  console.log(addToCart);
+  const { addToCart, cart, removeFromCart } = useCart();
 
   const checkProductInCart = product => {
     return cart.some(item => item.id === product.id)
@@ -26,7 +25,9 @@ const Products = ({ products }) => {
                   <strong>{product.title}</strong> - {product.price}$
                 </div>
                 <div>
-                  <button onClick={() => addToCart(product)}>
+                  <button style={{backgroundColor: isProductInCart ? 'red' : '#09f'}} onClick={() => {
+                    isProductInCart ? removeFromCart(product) : addToCart(product)
+                  }}>
                     {
                       isProductInCart ? <RemoveFromCartIcon/> : <AddToCartIcon/>
                     }
