@@ -16,13 +16,13 @@ export const CartProvider = ({ children }) => {
             return setCart(newCart)
         }
 
-        setCart(prevState => ([
-            ...prevState,
+        setCart(prevState => ([...prevState,
             {
                 ...product,
                 quantity: 1
-            }
-        ]))
+            }]
+            ))
+        
     }
 
     const removeFromCart = product => {

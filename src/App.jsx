@@ -16,8 +16,8 @@ function App() {
   return (
     <CartProvider>
       <Header/>
-      <Cart></Cart>
-      <Products products={filteredProducts} />
+      <Cart/>
+      <Products products={filteredProducts}/>
     </CartProvider>
   )
 }
